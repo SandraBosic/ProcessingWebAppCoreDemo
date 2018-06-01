@@ -13,9 +13,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using ProcessingWebApp.Attributes;
 
 namespace ProcessingWebApp.Controllers
 {
+    [UnhandledExceptionFilter]
     public class RecurringBatchController : BaseController
     {
 
