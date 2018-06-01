@@ -1,0 +1,18 @@
+﻿@using Contracts.ViewModels.RecurringBatches
+@model RecurringBatchViewModel
+
+<div id="pr-recurring-batch">
+    <div class="pr-content-block">
+        <h4>Recurring Payments</h4>
+    </div>
+    <div class="pr-content-block pr-no-border">
+        @Html.Partial("_BatchFilter", Model.Filter)
+
+        <div class="pr-export-button-container">
+            <button class="pr-button pr-filter-button" type="button" onclick="DownloadExport(exportToCsv, downloadUrl);"><i class="fa fa-download"></i> Export</button>
+        </div>
+    </div>
+    <div id="pr-table-container">
+        @Html.Partial("_BatchData", Model)
+    </div>
+</div>

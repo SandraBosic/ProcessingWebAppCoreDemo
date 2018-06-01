@@ -1,0 +1,33 @@
+﻿@using Contracts.ViewModels.RecurringBatches
+@model RecurringBatchMetadataViewModel
+
+<section>
+    <h2>@Model.MerchantName</h2>
+    <div class="pr-recurring-batch-metadata-section">
+        <label>Merchant assigned batch number</label> @Model.BatchNumber <br />
+        <label>Number of transacitons</label> @Model.TotalNumberOfTransactions <br />
+        <label>Total batch amount</label> @Model.TotalAmount
+    </div>
+    <div class="pr-recurring-batch-metadata-section">
+        <label>Amount of authorized transacitons</label> @Model.TotalAmountOfApprovedTransactions <br />
+        <label>Amount of rejected transacitons</label> @Model.TotalAmountOfRejectedTransactions <br />
+    </div>
+    <div class="pr-recurring-batch-metadata-section">
+        <label>Batch status</label> @Model.BatchStatus
+    </div>
+</section>
+<hr />
+<section>
+    <h4>Response codes</h4>
+    <div class="pr-recurring-batch-metadata-section">
+        @foreach (var responseCodeViewModel in Model.ResponseCodeSummary)
+        {
+            var linkText = responseCodeViewModel.ResponseCode + " - " + responseCodeViewModel.NumberOfTransactions + " færslur - Upphæð " + responseCodeViewModel.TotalAmount;
+            var parameters = new Dictionary<string, string> {{"batchId", Model.BatchId.ToString()}, {"responseCode", responseCodeViewModel.ResponseCode}};
+            
+            <a asp-controller="RecurringBatchTransaction" asp-action="Index" asp-all-route-data="@parameters">
+                @linkText
+            </a>
+        }
+    </div>
+</section>

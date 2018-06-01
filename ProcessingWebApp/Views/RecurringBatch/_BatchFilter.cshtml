@@ -1,0 +1,26 @@
+﻿@using Contracts.Filters.RecurringBatches
+@model BatchFilter
+
+<form asp-controller="RecurringBatch" asp-action="BatchFilter" data-ajax="true" data-ajax-update="#pr-table-container" data-ajax-mode="replace"  method="post">
+    <div class="pr-filter-container">
+        <div class="pr-filter-field-with-label">
+            <label asp-for="TextSearch" ></label>
+            <input asp-for="TextSearch" id ="FilterTextSearch" class="form-control"/>
+        </div>
+        <div class="pr-filter-field-with-label">
+            <label asp-for="From"></label>
+            <div id="BatchFilterFromDateContainer" class="pr-date-filter-container">
+                <input asp-for="From" asp-format="{0:dd.MM.yyyy}" type="text" class="form-control datepicker" id = "BatchFilterFromDate" />
+            </div>
+        </div>
+        <div class="pr-filter-field-with-label">
+            <label asp-for="To"></label>
+            <div id="BatchFilterToDateContainer" class="pr-date-filter-container">
+                <input asp-for="To" asp-format="{0:dd.MM.yyyy}" type="text" class="form-control datepicker" id="BatchFilterToDate" />
+            </div>
+        </div>
+        <div class="pr-filter-button-container">
+            <input name="operation" type ="submit" class="pr-button pr-filter-button fa fa-search" />            
+        </div>
+    </div>
+</form>

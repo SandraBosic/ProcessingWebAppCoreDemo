@@ -1,0 +1,170 @@
+﻿body {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.pr-user {
+    padding: 10px;
+}
+.pr-user img {
+    width: 40px;
+}
+
+.pr-container {
+    width: 93%;
+    margin: auto;
+}
+
+.pr-datepicker-container {
+    position: relative;
+}
+
+.pr-content-block {
+    float: left;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 10px 0 15px 0;
+}
+
+.pr-back-button-container {
+    display: block;
+    width: 100%;
+    float: left;
+    margin: 10px 0 20px 0;
+}
+
+.pr-back-button {
+    float: left;
+}
+
+.pr-button {
+    margin: 0 auto;
+    display: block;
+    background-color: #5E91A7;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    .pr-button:hover {
+        background-color: #ffffff;
+        color: #5E91A7;
+        border-color: #5E91A7;
+        cursor: pointer;
+    }
+
+.pr-filter-button {
+    font-size: 17px;
+    padding: 3px 19px;
+}
+
+.pr-table-action-button {
+    font-size: 25px;
+    padding: 0px 14px;
+}
+
+.pr-metadata-row {
+    display: none;
+}
+
+.pr-batch-metadata-container i {
+    margin: 0 auto;
+}
+
+.pr-batch-metadata-container section {
+    display: block;
+    height: 160px;
+}
+
+.pr-recurring-batch-metadata-section {
+    float: left;
+    margin-top: 10px;
+    width: 40%;
+}
+.pr-recurring-batch-metadata-section label {
+    font-weight: bold
+}
+
+.pr-pagination-button {
+    font-size: 17px;
+    padding: 0px 14px;
+    width: 43px;
+    float: left;
+    margin: 4px;
+}
+
+.active {
+    background-color: #F2612B;
+}
+.active:hover {
+    color: #F2612B;
+    border-color: #F2612B;
+}
+footer {
+    position:absolute;
+   bottom:0;
+   width:50%;
+   height:40px;   /* Height of the footer */
+   padding-left: 50px
+}
+select {
+    width: 127px;
+    height: 31px;
+}
+
+.pr-cardnumber-value {
+    float: left;
+}
+.pr-cardnumber-button {
+    float: right;
+}
+
+.error {
+    color: red;
+}
+
+.pr-no-border {
+    border: none !important;
+}
+
+.pr-filter-container {
+    
+}
+
+.pr-filter-field-with-label {
+    float: left;
+    display: block;
+    height: 40px;
+    padding: 0 10px 0 0;
+}
+.pr-filter-field-with-label label {
+    font-weight: bold;
+}
+.pr-filter-field-with-label input, .pr-filter-field-with-label select, .pr-filter-field-with-label label {
+    width: 100%;
+}
+
+.pr-filter-button-container {
+    float: left;
+    display: block;
+    height: 40px;
+    padding: 0 10px 0 0;
+    margin-top: 30px;
+}
+
+.pr-export-button-container {
+    float: right;
+    display: block;
+    height: 40px;
+    padding: 0 10px 0 0;
+    margin-top: 30px;
+}
+.pr-date-filter-container {
+    position: relative;
+}

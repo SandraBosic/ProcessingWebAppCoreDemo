@@ -1,0 +1,56 @@
+﻿@using Contracts.ViewModels.RecurringBatches
+@model RecurringBatchViewModel
+
+
+<h6>Number of results : @Model.Pagination.TotalCount</h6>
+<table class="pr-table">
+    <tr>
+        <th>Merchant assigned batch number</th>
+        <th>Boðgreiðsla batch ID</th>
+        <th>Total Amount</th>
+        <th>Merchant SSN</th>
+        <th>DBA Name</th>
+        <th>Agreement number</th>
+        <th>Batch status</th>
+        <th>Create date</th>
+        <th>Actions</th>
+    </tr>
+    @if (Model.Pagination.TotalCount != 0)
+    {
+        foreach (var batchData in Model.Batches)
+        {
+            <tr>
+                <td>@batchData.BatchNumber</td>
+                <td>@batchData.BatchId</td>
+                <td>@batchData.TotalAmount</td>
+                <td>@batchData.MerchantNationalId</td>
+                <td>@batchData.MerchantDbaName</td>
+                <td>@batchData.MerchantNumber</td>
+                <td>@batchData.BatchStatus</td>
+                <td>@batchData.BatchDate</td>
+                <td>
+                    <button class="pr-button pr-table-action-button" onclick="GetBatchMetadata('@batchData.BatchId')"><i class="fa fa-eye"></i></button>
+                </td>
+            </tr>
+            <tr class="pr-metadata-row" id="pr-batch-metadata-row-@batchData.BatchId">
+                <td colspan="9">
+                    <div class="pr-batch-metadata-container" id="pr-batch-metadata-container-@batchData.BatchId">
+                        <i class="fa fa-cog fa-spin fa-2x"></i>
+                    </div>
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+@if (Model.Pagination.TotalCount != 0)
+{
+    @Html.Partial("_Pagination", Model.Pagination)
+}
+
+@*@if (Model.Filter.OpenBatch != null)
+{
+    <script>
+        GetBatchMetadata('@Model.Filter.OpenBatch');
+    </script>
+}*@
